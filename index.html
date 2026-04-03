@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arthur Dev — Custom Discord Bots</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --purple: #5865F2;
@@ -21,8 +21,8 @@
     --text-faint: rgba(232,232,240,0.48);
     --green: #57F287;
     --yellow: #FEE75C;
-    --font: 'Space Grotesk', sans-serif;
-    --display: 'Syne', sans-serif;
+    --font: 'Figtree', sans-serif;
+    --display: 'Bricolage Grotesque', sans-serif;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -144,6 +144,12 @@
     padding: 9rem 5vw 5rem;
   }
 
+  .hero-inner {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -163,7 +169,7 @@
 
   .hero-title {
     font-family: var(--display);
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.02em;
@@ -179,7 +185,7 @@
   }
 
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     color: var(--text-dim);
     max-width: 520px;
     margin: 0 auto 2.5rem;
@@ -260,6 +266,13 @@
     background: var(--bg2);
   }
 
+  .stats-inner {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
   .strip-item {
     flex: 1;
     text-align: center;
@@ -314,7 +327,7 @@
 
   .section-title {
     font-family: var(--display);
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
     font-weight: 800;
     color: var(--text);
     line-height: 1.15;
@@ -489,6 +502,7 @@
     font-size: 1.2rem;
     font-weight: 700;
     vertical-align: super;
+    margin-left: 2px;
   }
 
   .plan-period {
@@ -612,7 +626,7 @@
 
   .contact-glow {
     font-family: var(--display);
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 800;
     color: var(--text);
     letter-spacing: -0.02em;
@@ -702,10 +716,20 @@
   @media (max-width: 800px) {
     .nav-links { display: none; }
     .projects, .pricing-grid, .contact-cards { grid-template-columns: 1fr; }
-    .stats-strip { flex-wrap: wrap; }
+    .stats-inner { flex-wrap: wrap; }
     .strip-item { min-width: 50%; border-bottom: 1px solid var(--border2); }
     .not-sure { flex-direction: column; }
     footer { justify-content: center; text-align: center; }
+  }
+
+  /* LARGE SCREEN CAP — prevents text from stretching on big monitors */
+  @media (min-width: 1400px) {
+    nav { padding: 1.1rem calc((100vw - 1300px) / 2); }
+    #work { max-width: 1100px; }
+    #pricing { padding: 6rem calc((100vw - 960px) / 2); }
+    #contact { padding: 6rem calc((100vw - 760px) / 2); }
+    footer { padding: 2rem calc((100vw - 1300px) / 2); }
+    body { font-size: 16px; }
   }
 
   /* ADV BOT GALLERY */
@@ -785,6 +809,7 @@
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-inner">
   <div class="hero-badge">
     <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.031.057a19.9 19.9 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
     Custom Discord Bot Developer
@@ -807,12 +832,14 @@
     <a href="#pricing" class="btn-primary">View Pricing</a>
     <a href="#work" class="btn-outline">See My Work ↓</a>
   </div>
+  </div>
 </section>
 
 <!-- STATS STRIP -->
 <div class="stats-strip">
+  <div class="stats-inner">
   <div class="strip-item">
-    <span class="strip-num">€10</span>
+    <span class="strip-num">10€</span>
     <span class="strip-label">Starting price</span>
   </div>
   <div class="strip-item">
@@ -826,6 +853,7 @@
   <div class="strip-item">
     <span class="strip-num">Free</span>
     <span class="strip-label">Consultation</span>
+  </div>
   </div>
 </div>
 
@@ -901,7 +929,7 @@
       <!-- STARTER -->
       <div class="plan-card">
         <div class="plan-name">Starter bot</div>
-        <div class="plan-price"><sup>€</sup>10</div>
+        <div class="plan-price">10<sup>€</sup></div>
         <div class="plan-period">one-time payment</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
@@ -917,7 +945,7 @@
       <div class="plan-card popular">
         <div class="popular-badge">Most popular</div>
         <div class="plan-name">Custom bot</div>
-        <div class="plan-price"><sup>€</sup>30</div>
+        <div class="plan-price">30<sup>€</sup></div>
         <div class="plan-period">one-time payment</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
@@ -933,7 +961,7 @@
       <!-- ADVANCED -->
       <div class="plan-card">
         <div class="plan-name">Advanced bot</div>
-        <div class="plan-price"><sup>€</sup>70</div>
+        <div class="plan-price">70<sup>€</sup></div>
         <div class="plan-period">one-time payment</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
@@ -991,25 +1019,4 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© 2026 <span>Arthur Dev</span> — Custom Discord Bots</span>
-  <ul class="footer-links">
-    <li><a href="#">Privacy</a></li>
-    <li><a href="#">Terms</a></li>
-    <li><a href="#">Docs</a></li>
-    <li><a href="#">GitHub</a></li>
-  </ul>
-  <span class="footer-copy">artu#2746 &nbsp;·&nbsp; <span id="footer-email"></span></span>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  var e=atob('YXJ0aHVyLmRldi5ib3RzQGdtYWlsLmNvbQ==');
-  var a=document.getElementById('email-val');
-  var b=document.getElementById('footer-email');
-  if(a)a.textContent=e;
-  if(b)b.textContent=e;
-});
-</script>
-
-</body>
-</html>
+  <span class="footer-copy">© 2026 <span>Arthur Dev</span> —
