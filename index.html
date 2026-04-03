@@ -991,4 +991,25 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© 2026 <span>Arthur Dev</span> —
+  <span class="footer-copy">© 2026 <span>Arthur Dev</span> — Custom Discord Bots</span>
+  <ul class="footer-links">
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Terms</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">GitHub</a></li>
+  </ul>
+  <span class="footer-copy">artu#2746 &nbsp;·&nbsp; <span id="footer-email"></span></span>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var e=atob('YXJ0aHVyLmRldi5ib3RzQGdtYWlsLmNvbQ==');
+  var a=document.getElementById('email-val');
+  var b=document.getElementById('footer-email');
+  if(a)a.textContent=e;
+  if(b)b.textContent=e;
+});
+</script>
+
+</body>
+</html>
