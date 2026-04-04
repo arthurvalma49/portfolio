@@ -804,10 +804,7 @@
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="btn-nav">Order a Bot →</a>
 </nav>
-
-<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
   <div class="hero-badge">
@@ -1019,4 +1016,18 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© 2026 <span>Arthur Dev</span> —
+  <span class="footer-copy">© 2026 <span>Arthur Dev</span> — Discord Bot Developer</span>
+  <span class="footer-copy">Email: <span id="footer-email"></span></span>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var e = atob('YXJ0aHVyLmRldi5ib3RzQGdtYWlsLmNvbQ==');
+  var ev = document.getElementById('email-val');
+  var fe = document.getElementById('footer-email');
+  if (ev) ev.textContent = e;
+  if (fe) fe.textContent = e;
+});
+</script>
+</body>
+</html>
